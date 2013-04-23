@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ 
+<!-- This is the declaration of the Spring Web MVC Dispactcher Servlet-->  
+  <servlet>
+    <servlet-name>spring</servlet-name>
+    <servlet-class>
+      org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  
+  <!-- This is the Dispatcher Servlet request mapping-->
+  <servlet-mapping>
+    <!-- The name of the servlet to handle request (declared above)-->
+    <servlet-name>spring</servlet-name> 
+    <!-- All requests ending in .html will be handled by this instance of the Dispatcher Servlet-->
+    <url-pattern>*.html</url-pattern> 
+  </servlet-mapping>
+  
+<!--  The delcaration and mapping done here could also be done code-based by implementing the Webapplicationinitializer interface that is provided by the Spring MVC -->
+  
+    <session-config>
+    <session-timeout>
+      30
+    </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+</web-app>
